@@ -42,6 +42,9 @@ def main():
     df = df.divide([totals['QBR']])
     df_total = df_total.join([df])
 
+    # The GOAT CODE
+    df_total.to_csv('2020 Inputs.csv')
+
 
 
     pd.set_option("display.max_rows", None, "display.max_columns", None)
