@@ -1,4 +1,4 @@
-,date,home team,visiting team,home score,visiting score,Win Binary
+,date,home_team,visiting_team,home_score,visiting_score,win_binary
 1,9-10-2020,KansasCity,Houston,34,20,1.0
 2,9-13-2020,NewEngland,Miami,21,11,1.0
 3,9-13-2020,Baltimore,Cleveland,38,6,1.0
@@ -64,7 +64,7 @@
 63,10-05-2020,KansasCity,NewEngland,26,10,1.0
 64,10-08-2020,Chicago,TampaBay,20,19,1.0
 65,10-11-2020,Atlanta,Carolina,16,23,0.0
-66,10-11-2020,KCChiefs,LVRaiders,32,40,0.0
+66,10-11-2020,KansasCity,LVRaiders,32,40,0.0
 67,10-11-2020,Washington,LARams,10,30,0.0
 68,10-11-2020,Houston,Jacksonville,30,14,1.0
 69,10-11-2020,NYJets,Arizona,10,30,0.0
@@ -124,13 +124,13 @@
 123,11-08-2020,Tennessee,Chicago,24,17,1.0
 124,11-08-2020,Minnesota,Detroit,34,20,1.0
 125,11-08-2020,Indianapolis,Baltimore,10,24,0.0
-126,11-08-2020,Kansas,Carolina,33,31,1.0
+126,11-08-2020,KansasCity,Carolina,33,31,1.0
 127,11-08-2020,Jacksonville,Houston,25,27,0.0
 128,11-08-2020,Washington,NYGiants,20,23,0.0
 129,11-08-2020,LAChargers,LasVegas,26,31,0.0
 130,11-08-2020,Dallas,Pittsburgh,19,24,0.0
 131,11-08-2020,Arizona,Miami,31,34,0.0
-132,11-08-2020,Tampa,NewOrleans,3,38,0.0
+132,11-08-2020,TampaBay,NewOrleans,3,38,0.0
 133,11-09-2020,NYJets,NewEngland,27,30,0.0
 134,11-12-2020,Tennessee,Indianapolis,17,34,0.0
 135,11-15-2020,Pittsburgh,Cincinnati,36,10,1.0
@@ -241,28 +241,28 @@
 240,12-28-2020,NewEngland,Buffalo,9,38,0.0
 241,1-03-2021,Philadelphia,Washington,14,20,0.0
 242,1-03-2021,Indianapolis,Jacksonville,28,14,1.0
-243,1-03-2021,Chicago,Green Bay,16,35,0.0
-244,1-03-2021,NY Giants,Dallas,23,19,1.0
+243,1-03-2021,Chicago,GreenBay,16,35,0.0
+244,1-03-2021,NYGiants,Dallas,23,19,1.0
 245,1-03-2021,Cleveland,Pittsburgh,24,22,1.0
 246,1-03-2021,Houston,Tennessee,38,41,0.0
-247,1-03-2021,Carolina,New Orleans,7,33,0.0
-248,1-03-2021,New England,NY Jets,28,14,1.0
+247,1-03-2021,Carolina,NewOrleans,7,33,0.0
+248,1-03-2021,NewEngland,NYJets,28,14,1.0
 249,1-03-2021,Detroit,Minnesota,35,37,0.0
-250,1-03-2021,Tampa Bay,Atlanta,44,27,1.0
+250,1-03-2021,TampaBay,Atlanta,44,27,1.0
 251,1-03-2021,Cincinnati,Baltimore,3,38,0.0
 252,1-03-2021,Buffalo,Miami,56,26,1.0
-253,1-03-2021,Kansas City,LA Chargers,21,38,0.0
-254,1-03-2021,San Francisco,Seattle,23,26,0.0
-255,1-03-2021,Denver,Las Vegas,31,32,0.0
-256,1-03-2021,LA Rams,Arizona,18,7,1.0
+253,1-03-2021,KansasCity,LAChargers,21,38,0.0
+254,1-03-2021,SanFrancisco,Seattle,23,26,0.0
+255,1-03-2021,Denver,LasVegas,31,32,0.0
+256,1-03-2021,LARams,Arizona,18,7,1.0
 257,1-09-2021,Buffalo,Indianapolis,27,24,1.0
-258,1-09-2021,Seattle,LA Rams,20,30,0.0
-259,1-09-2021,Washington,Tampa Bay,23,31,0.0
+258,1-09-2021,Seattle,LARams,20,30,0.0
+259,1-09-2021,Washington,TampaBay,23,31,0.0
 260,1-10-2021,Tennessee,Baltimore,13,20,0.0
-261,1-10-2021,New Orleans,Chicago,21,9,1.0
+261,1-10-2021,NewOrleans,Chicago,21,9,1.0
 262,1-10-2021,Pittsburgh,Cleveland,37,48,0.0
-263,1-16-2021,Green Bay,LA Rams,32,18,1.0
+263,1-16-2021,GreenBay,LARams,32,18,1.0
 264,1-16-2021,Buffalo,Baltimore,17,3,1.0
-265,1-17-2021,Kansas City,Cleveland,22,17,1.0
-266,1-17-2021,New Orleans,Tampa Bay,20,30,0.0
-267,1-24-2021,Green Bay,Tampa Bay,26,31,0.0
+265,1-17-2021,KansasCity,Cleveland,22,17,1.0
+266,1-17-2021,NewOrleans,TampaBay,20,30,0.0
+267,1-24-2021,GreenBay,TampaBay,26,31,0.0
