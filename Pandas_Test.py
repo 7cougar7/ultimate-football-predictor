@@ -10,9 +10,7 @@ def main():
     df.columns = ['Team', 'Off Turnovers', 'Passing Yards', 'Rushing Yards']
     df = df.astype({'Off Turnovers': 'int32', 'Passing Yards': 'int32', 'Rushing Yards': 'int32'})
     totals = df.sum(axis=0, numeric_only=True)
-    #totals = totals.divide([1, 16, 16], axis=0)
     totals = totals/32
-    #df = df[['Turnovers']]/totals[['Turnovers']]
     names = df[['Team']]
     df = df.drop('Team', axis=1)
     df = df.divide([totals['Off Turnovers'], totals['Passing Yards'], totals['Rushing Yards']])
@@ -32,15 +30,22 @@ def main():
     df.sort_values('Team', inplace=True)
     df_def.sort_values('Team', inplace=True)
     df_def = df_def.drop('Team', axis=1)
-    #df = pd.concat([df, df_def], axis=1, sort=True)
-    df = df.join([df_def])
+    df_total = df.join([df_def])
+
+    required_cols_off = [2]
+    df = pd.read_csv('QB Ratings2020.csv', usecols=required_cols_off)
+    df = df[1:]
+    df.columns = ['QBR']
+    df = df.astype({'QBR': 'float'})
+    totals = df.sum(axis=0, numeric_only=True)
+    totals = totals/32
+    df = df.divide([totals['QBR']])
+    df_total = df_total.join([df])
 
 
 
-
-    
     pd.set_option("display.max_rows", None, "display.max_columns", None)
-    print(df)
+    print(df_total)
     #with pd.option_context('display.max_seq_items', None):
     #    print(df.columns)
 
