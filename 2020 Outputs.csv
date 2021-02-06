@@ -64,7 +64,7 @@
 63,10-05-2020,KansasCity,NewEngland,26,10,1.0
 64,10-08-2020,Chicago,TampaBay,20,19,1.0
 65,10-11-2020,Atlanta,Carolina,16,23,0.0
-66,10-11-2020,KansasCity,LVRaiders,32,40,0.0
+66,10-11-2020,KansasCity,LasVegas,32,40,0.0
 67,10-11-2020,Washington,LARams,10,30,0.0
 68,10-11-2020,Houston,Jacksonville,30,14,1.0
 69,10-11-2020,NYJets,Arizona,10,30,0.0
@@ -189,7 +189,7 @@
 188,12-06-2020,LAChargers,NewEngland,0,45,0.0
 189,12-06-2020,KansasCity,Denver,22,16,1.0
 190,12-07-2020,SanFrancisco,Buffalo,24,34,0.0
-191,12-07-2020,Pittsburgh,Washingtom,17,23,0.0
+191,12-07-2020,Pittsburgh,Washington,17,23,0.0
 192,12-08-2020,Baltimore,Dallas,34,17,1.0
 193,12-10-2020,LARams,NewEngland,24,3,1.0
 194,12-13-2020,Detroit,GreenBay,24,31,0.0
@@ -204,7 +204,7 @@
 203,12-13-2020,Seattle,NYJets,40,3,1.0
 204,12-13-2020,LAChargers,Atlanta,20,17,1.0
 205,12-13-2020,Philadelphia,NewOrleans,24,21,1.0
-206,12-13-2020,SanFrancisco,Washingtom,15,23,0.0
+206,12-13-2020,SanFrancisco,Washington,15,23,0.0
 207,12-13-2020,Buffalo,Pittsburgh,23,7,1.0
 208,12-14-2020,Cleveland,Baltimore,42,47,0.0
 209,12-17-2020,LasVegas,LAChargers,27,30,0.0
