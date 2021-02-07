@@ -5,13 +5,13 @@ import os
 
 
 def main():
-    model_version = 2
-    df = pd.read_csv('finalized_db.csv')
-    target = df[['home_score', 'visiting_score', 'win_binary']]
-    df = df.drop([df.columns[0], 'home_score', 'visiting_score', 'win_binary'], axis=1)
+    model_version = 4
+    df = pd.read_csv('all_inputs.csv')
+    target = df[['home score', 'visiting score', 'Win Binary']]
+    df = df.drop([df.columns[0], 'home score', 'visiting score', 'Win Binary'], axis=1)
     normalized_dataset = (df - df.min()) / (df.max() - df.min())
 
-    n = 67
+    n = 600
     validation_indices = np.random.choice(normalized_dataset.index, n, replace=False)
     validation_dataset = normalized_dataset.iloc[validation_indices]
     validation_output = target.iloc[validation_indices]
@@ -34,9 +34,9 @@ def main():
     pd.set_option("display.max_rows", None, "display.max_columns", None)
 
     model = create_model()
-    EPOCHS = 1000
+    EPOCHS = 10000
 
-    model.compile(optimizer=tf.keras.optimizers.SGD(learning_rate=0.01), loss=tf.keras.losses.MeanSquaredError(),
+    model.compile(optimizer=tf.keras.optimizers.Adamax(learning_rate=0.01), loss=tf.keras.losses.MeanSquaredError(),
                   metrics=['accuracy'])
     # model.compile(optimizer=tf.keras.optimizers.Adam(), loss=tf.keras.losses.MeanSquaredError(),
     #               metrics=['accuracy'])
@@ -51,18 +51,18 @@ def main():
 
     model.fit(x=training.values, y=training_output.values, epochs=EPOCHS,
               validation_data=(validation_dataset.values, validation_output.values),
-              use_multiprocessing=True, verbose=0)  # , callbacks=[cp_callback])
+              use_multiprocessing=True)  # , callbacks=[cp_callback])
     print(validation_output)
     print(model(validation_dataset.values))
 
-    # model.save('models/Model_v' + str(model_version))
+    model.save('models/Model_v' + str(model_version))
 
 
 def create_model():
     model = tf.keras.Sequential([
-        tf.keras.layers.InputLayer(input_shape=(14,)),
-        tf.keras.layers.Dense(6, activation=tf.nn.tanh),
-        tf.keras.layers.Dense(6, activation=tf.nn.tanh),
+        tf.keras.layers.InputLayer(input_shape=(16,)),
+        tf.keras.layers.Dense(6, activation=tf.keras.activations.tanh),
+        tf.keras.layers.Dense(6, activation=tf.keras.activations.tanh),
         # tf.keras.layers.Dense(6, activation=tf.nn.tanh),
         # tf.keras.layers.Dense(6, activation=tf.nn.tanh),
         # tf.keras.layers.Dense(10, activation=tf.nn.tanh),
