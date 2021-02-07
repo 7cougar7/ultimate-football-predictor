@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-
+CORS(app)
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 # A welcome message to test our server
 @app.route('/')

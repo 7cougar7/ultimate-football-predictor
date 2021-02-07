@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Football Predictor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -22,15 +24,146 @@
             background-size: cover;
         }
     </style>
+    <script>
+        function changeTeamLogo(image, team) {
+            let d = new Date();
+            let imagePath = '/static/team_logos/' + team + '.png?timestamp=' + d.getTime()
+            image.attr('src', imagePath)
+        }
+
+        $(document).ready(function () {
+            tf.setBackend('cpu')
+            console.log(tf.getBackend())
+            console.log("{{url_for('static', filename='js/model.json')}}")
+            const model = tf.loadLayersModel("{{url_for('static', filename='js/model_v1/model.json')}}")
+            console.log('model', model)
+            $('#home-team-select').change(function () {
+                changeTeamLogo($('#home-logo'), $(this).children("option:selected").val())
+            })
+            $('#visiting-select').change(function () {
+                changeTeamLogo($('#visiting-logo'), $(this).children("option:selected").val())
+            })
+        })
+    </script>
 </head>
-<body>
-<div class="background-div">
+<body class="background-div">
+<div class="my-auto">
     <!--    <div class="d-flex" style="background-color: transparent">-->
-    <div class="container py-auto">
+    <div class="container my-auto py-auto">
         <div class="row">
-            <div class="col-lg-2">
-                <img src="{{url_for('static', filename='football3.png')}}" class="">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+            <img id="home-logo" src="/static/team_logos/Arizona.png" class="float-left"
+                  alt="Home Team Logo">
             </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">
+            <img id="visiting-logo" src="/static/team_logos/Arizona.png" class="float-right"
+                  alt="Visiting Team Logo">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group mb-3">
+                    <label for="home-team-select" style="font-size: 150%" class="text-white">Home Team:</label>
+                    <select class="form-control" id="home-year-select">
+                        <option value="2020">2020-2021</option>
+                        <option value="2019">2019-2020</option>
+                        <option value="2018">2018-2019</option>
+                        <option value="2017">2017-2018</option>
+                        <option value="2016">2016-2017</option>
+                        <option value="2015">2015-2016</option>
+                        <option value="2014">2014-2015</option>
+                        <option value="2013">2013-2014</option>
+                    </select>
+                    <select class="form-control" id="home-team-select">
+                        <option value="Arizona">Arizona Cardinals</option>
+                        <option value="Atlanta">Atlanta Falcons</option>
+                        <option value="Baltimore">Baltimore Ravens</option>
+                        <option value="Buffalo">Buffalo Bills</option>
+                        <option value="Carolina">Carolina Panthers</option>
+                        <option value="Chicago">Chicago Bears</option>
+                        <option value="Cincinnati">Cincinnati Bengals</option>
+                        <option value="Cleveland">Cleveland Browns</option>
+                        <option value="Dallas">Dallas Cowboys</option>
+                        <option value="Denver">Denver Broncos</option>
+                        <option value="Detroit">Detroit Lions</option>
+                        <option value="GreenBay">Green Bay Packers</option>
+                        <option value="Houston">Houston Texans</option>
+                        <option value="Indianapolis">Indianapolis Colts</option>
+                        <option value="Jacksonville">Jacksonville Jaguars</option>
+                        <option value="KansasCity">Kansas City Chiefs</option>
+                        <option value="LasVegas">Las Vegas Raiders</option>
+                        <option value="LAChargers">Las Angeles Chargers</option>
+                        <option value="LARams">Las Angeles Rams</option>
+                        <option value="Miami">Miami Dolphins</option>
+                        <option value="Minnesota">Minnesota Vikings</option>
+                        <option value="NewEngland">New England Patriots</option>
+                        <option value="NewOrleans">New Orleans Saints</option>
+                        <option value="NYGiants">New York Giants</option>
+                        <option value="NYJets">New York Jets</option>
+                        <option value="Philadelphia">Philadelphia Eagles</option>
+                        <option value="Pittsburgh">Pittsburgh Steelers</option>
+                        <option value="SanFrancisco">San Francisco 49ers</option>
+                        <option value="Seattle">Seattle Seahawks</option>
+                        <option value="TampaBay">Tampa Bay Buccaneers</option>
+                        <option value="Tennessee">Tennessee Titans</option>
+                        <option value="Washington">Washington Football Team</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group mb-3">
+                    <label for="visiting-team-select" style="font-size: 150%" class="text-white">Visiting Team:</label>
+                    <select class="form-control" id="visiting-year-select">
+                        <option value="2020">2020-2021</option>
+                        <option value="2019">2019-2020</option>
+                        <option value="2018">2018-2019</option>
+                        <option value="2017">2017-2018</option>
+                        <option value="2016">2016-2017</option>
+                        <option value="2015">2015-2016</option>
+                        <option value="2014">2014-2015</option>
+                        <option value="2013">2013-2014</option>
+                    </select>
+                    <select class="form-control" id="visiting-team-select">
+                        <option value="Arizona">Arizona Cardinals</option>
+                        <option value="Atlanta">Atlanta Falcons</option>
+                        <option value="Baltimore">Baltimore Ravens</option>
+                        <option value="Buffalo">Buffalo Bills</option>
+                        <option value="Carolina">Carolina Panthers</option>
+                        <option value="Chicago">Chicago Bears</option>
+                        <option value="Cincinnati">Cincinnati Bengals</option>
+                        <option value="Cleveland">Cleveland Browns</option>
+                        <option value="Dallas">Dallas Cowboys</option>
+                        <option value="Denver">Denver Broncos</option>
+                        <option value="Detroit">Detroit Lions</option>
+                        <option value="GreenBay">Green Bay Packers</option>
+                        <option value="Houston">Houston Texans</option>
+                        <option value="Indianapolis">Indianapolis Colts</option>
+                        <option value="Jacksonville">Jacksonville Jaguars</option>
+                        <option value="KansasCity">Kansas City Chiefs</option>
+                        <option value="LasVegas">Las Vegas Raiders</option>
+                        <option value="LAChargers">Las Angeles Chargers</option>
+                        <option value="LARams">Las Angeles Rams</option>
+                        <option value="Miami">Miami Dolphins</option>
+                        <option value="Minnesota">Minnesota Vikings</option>
+                        <option value="NewEngland">New England Patriots</option>
+                        <option value="NewOrleans">New Orleans Saints</option>
+                        <option value="NYGiants">New York Giants</option>
+                        <option value="NYJets">New York Jets</option>
+                        <option value="Philadelphia">Philadelphia Eagles</option>
+                        <option value="Pittsburgh">Pittsburgh Steelers</option>
+                        <option value="SanFrancisco">San Francisco 49ers</option>
+                        <option value="Seattle">Seattle Seahawks</option>
+                        <option value="TampaBay">Tampa Bay Buccaneers</option>
+                        <option value="Tennessee">Tennessee Titans</option>
+                        <option value="Washington">Washington Football Team</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary">Submit</button>
         </div>
         <!--        </div>-->
     </div>
