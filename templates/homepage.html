@@ -23,6 +23,10 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        .text-stroke {
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
     </style>
     <script>
         let homeData = [];
@@ -59,7 +63,11 @@
             console.log(results)
             $('#home-score').text(Math.round(results[0]))
             $('#visiting-score').text(Math.round(results[1]))
-            $('#confidence-value').text(Math.round(Math.abs(results[2] - 0.5) * 2000) / 10)
+            let confidence = Math.round(Math.abs(results[2] - 0.5) * 2000) / 10
+            if (confidence > 100) {
+                confidence = 99.9
+            }
+            $('#confidence-value').text(confidence + '%')
         }
 
 
@@ -116,8 +124,16 @@
 </head>
 <body class="background-div">
 <div class="my-auto">
-    <!--    <div class="d-flex" style="background-color: transparent">-->
-    <div class="container my-auto py-auto">
+    <div class="container pt-5">
+        <div class="row">
+            <h1 class="text-center text-stroke text-white">The Hail Mary Project</h1>
+        </div>
+        <div class="row">
+            <h5 class="text-center text-stroke text-white">The Ultimate Machine Learning Football Predictor</h5>
+        </div>
+        <div class="row pb-5">
+            <h6 class="text-center text-stroke text-white">(2.1 Undecillion Combinations!)</h6>
+        </div>
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-3">
@@ -133,7 +149,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group mb-3">
-                    <label for="home-team-select" style="font-size: 150%" class="text-white">Home Team:</label>
+                    <label for="home-team-select" style="font-size: 150%" class="text-white text-stroke">Home Team:</label>
                     <select class="form-control" id="home-year-select">
                         <option value="2020">2020-2021</option>
                         <option value="2019">2019-2020</option>
@@ -162,8 +178,8 @@
                         <option value="Jacksonville">Jacksonville Jaguars</option>
                         <option value="KansasCity">Kansas City Chiefs</option>
                         <option value="LasVegas">Las Vegas Raiders</option>
-                        <option value="LAChargers">Las Angeles Chargers</option>
-                        <option value="LARams">Las Angeles Rams</option>
+                        <option value="LAChargers">Los Angeles Chargers</option>
+                        <option value="LARams">Los Angeles Rams</option>
                         <option value="Miami">Miami Dolphins</option>
                         <option value="Minnesota">Minnesota Vikings</option>
                         <option value="NewEngland">New England Patriots</option>
@@ -182,7 +198,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="form-group mb-3">
-                    <label for="visiting-team-select" style="font-size: 150%" class="text-white">Visiting Team:</label>
+                    <label for="visiting-team-select" style="font-size: 150%" class="text-white text-stroke">Visiting Team:</label>
                     <select class="form-control" id="visiting-year-select">
                         <option value="2020">2020-2021</option>
                         <option value="2019">2019-2020</option>
@@ -211,8 +227,8 @@
                         <option value="Jacksonville">Jacksonville Jaguars</option>
                         <option value="KansasCity">Kansas City Chiefs</option>
                         <option value="LasVegas">Las Vegas Raiders</option>
-                        <option value="LAChargers">Las Angeles Chargers</option>
-                        <option value="LARams">Las Angeles Rams</option>
+                        <option value="LAChargers">Los Angeles Chargers</option>
+                        <option value="LARams">Los Angeles Rams</option>
                         <option value="Miami">Miami Dolphins</option>
                         <option value="Minnesota">Minnesota Vikings</option>
                         <option value="NewEngland">New England Patriots</option>
@@ -232,31 +248,34 @@
         </div>
         <div class="row">
             <div class="col-lg-1"></div>
-            <div class="col-lg-4">
-                <h3 class="text-white">Home Score: </h3><span class="text-white h3" id="home-score"></span>
+            <div class="col-lg-4 text-center">
+                <h3 class="text-white text-stroke">Home Score: </h3>
+                <span class="text-white h3 text-stroke" id="home-score"></span>
 
             </div>
             <div class="col-lg-2"></div>
-            <div class="col-lg-4">
-                <h3 class="text-white">Visiting Score: </h3><span class="text-white h3" id="visiting-score"></span>
+            <div class="col-lg-4 text-center">
+                <h3 class="text-white text-stroke">Visiting Score: </h3>
+                <span class="text-white h3 text-stroke" id="visiting-score"></span>
 
             </div>
             <div class="col-lg-1"></div>
-
         </div>
-        <div class="row">
+        <div class="row pb-2">
             <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-                <h3 class="text-white">Confidence: </h3><span class="text-white h3"
-                                                              id="confidence-value"></span><span
-                    class="text-white h3">%</span>
+            <div class="col-lg-4 text-center">
+                <h3 class="text-white text-stroke">Confidence: </h3>
+                <span class="text-white text-stroke h3" id="confidence-value"></span>
             </div>
             <div class="col-lg-4"></div>
         </div>
         <div class="row">
-            <button type="button" class="btn btn-primary" id="submit-button">Submit</button>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 btn-block btn-group">
+                <button type="button" class="btn btn-primary btn-block" id="submit-button">Submit</button>
+            </div>
+            <div class="col-lg-4"></div>
         </div>
-        <!--        </div>-->
     </div>
 </div>
 </body>
