@@ -3,7 +3,7 @@ import pandas as pd
 
 def main():
 
-    df = pd.read_csv('finalized_db.csv')
+    df = pd.read_csv('data/finalized_dbs/finalized_db.csv')
     target = df[['home_score', 'visiting_score', 'win_binary']]
     df = df.drop([df.columns[0], 'home_score', 'visiting_score', 'win_binary'], axis=1)
     normalized_dataset = (df - df.min()) / (df.max() - df.min())
