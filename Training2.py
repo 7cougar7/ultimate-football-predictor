@@ -5,7 +5,7 @@ import os
 
 
 def main():
-    model_version = 4
+    model_version = 5
     df = pd.read_csv('all_inputs.csv')
     target = df[['home score', 'visiting score', 'Win Binary']]
     df = df.drop([df.columns[0], 'home score', 'visiting score', 'Win Binary'], axis=1)
@@ -36,7 +36,7 @@ def main():
     model = create_model()
     EPOCHS = 10000
 
-    model.compile(optimizer=tf.keras.optimizers.Adamax(learning_rate=0.01), loss=tf.keras.losses.MeanSquaredError(),
+    model.compile(optimizer=tf.keras.optimizers.Adamax(learning_rate=0.001), loss=tf.keras.losses.MeanSquaredError(),
                   metrics=['accuracy'])
     # model.compile(optimizer=tf.keras.optimizers.Adam(), loss=tf.keras.losses.MeanSquaredError(),
     #               metrics=['accuracy'])
@@ -55,7 +55,7 @@ def main():
     print(validation_output)
     print(model(validation_dataset.values))
 
-    model.save('models/Model_v' + str(model_version))
+    model.save('models/model_v' + str(model_version) + '.h5')
 
 
 def create_model():
