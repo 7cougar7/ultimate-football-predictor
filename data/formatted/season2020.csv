@@ -1,5 +1,4 @@
 date,home team,visiting team,home score,visiting score
-,,,,
 9-10-20,KansasCity,Houston,34,20
 9-13-20,NewEngland,Miami,21,11
 9-13-20,Baltimore,Cleveland,38,6
@@ -65,7 +64,7 @@ date,home team,visiting team,home score,visiting score
 10-05-20,KansasCity,NewEngland,26,10
 10-08-20,Chicago,TampaBay,20,19
 10-11-20,Atlanta,Carolina,16,23
-10-11-20,KCChiefs,LVRaiders,32,40
+10-11-20,KansasCity,LasVegas,32,40
 10-11-20,Washington,LARams,10,30
 10-11-20,Houston,Jacksonville,30,14
 10-11-20,NYJets,Arizona,10,30
@@ -125,13 +124,13 @@ date,home team,visiting team,home score,visiting score
 11-08-20,Tennessee,Chicago,24,17
 11-08-20,Minnesota,Detroit,34,20
 11-08-20,Indianapolis,Baltimore,10,24
-11-08-20,Kansas,Carolina,33,31
+11-08-20,KansasCity,Carolina,33,31
 11-08-20,Jacksonville,Houston,25,27
 11-08-20,Washington,NYGiants,20,23
 11-08-20,LAChargers,LasVegas,26,31
 11-08-20,Dallas,Pittsburgh,19,24
 11-08-20,Arizona,Miami,31,34
-11-08-20,Tampa,NewOrleans,3,38
+11-08-20,TampaBay,NewOrleans,3,38
 11-09-20,NYJets,NewEngland,27,30
 11-12-20,Tennessee,Indianapolis,17,34
 11-15-20,Pittsburgh,Cincinnati,36,10
@@ -190,7 +189,7 @@ date,home team,visiting team,home score,visiting score
 12-06-20,LAChargers,NewEngland,0,45
 12-06-20,KansasCity,Denver,22,16
 12-07-20,SanFrancisco,Buffalo,24,34
-12-07-20,Pittsburgh,Washingtom,17,23
+12-07-20,Pittsburgh,Washington,17,23
 12-08-20,Baltimore,Dallas,34,17
 12-10-20,LARams,NewEngland,24,3
 12-13-20,Detroit,GreenBay,24,31
@@ -205,7 +204,7 @@ date,home team,visiting team,home score,visiting score
 12-13-20,Seattle,NYJets,40,3
 12-13-20,LAChargers,Atlanta,20,17
 12-13-20,Philadelphia,NewOrleans,24,21
-12-13-20,SanFrancisco,Washingtom,15,23
+12-13-20,SanFrancisco,Washington,15,23
 12-13-20,Buffalo,Pittsburgh,23,7
 12-14-20,Cleveland,Baltimore,42,47
 12-17-20,LasVegas,LAChargers,27,30
@@ -242,28 +241,28 @@ date,home team,visiting team,home score,visiting score
 12-28-20,NewEngland,Buffalo,9,38
 1-03-21,Philadelphia,Washington,14,20
 1-03-21,Indianapolis,Jacksonville,28,14
-1-03-21,Chicago,Green Bay,16,35
-1-03-21,NY Giants,Dallas,23,19
+1-03-21,Chicago,GreenBay,16,35
+1-03-21,NYGiants,Dallas,23,19
 1-03-21,Cleveland,Pittsburgh,24,22
 1-03-21,Houston,Tennessee,38,41
-1-03-21,Carolina,New Orleans,7,33
-1-03-21,New England,NY Jets,28,14
+1-03-21,Carolina,NewOrleans,7,33
+1-03-21,NewEngland,NYJets,28,14
 1-03-21,Detroit,Minnesota,35,37
-1-03-21,Tampa Bay,Atlanta,44,27
+1-03-21,TampaBay,Atlanta,44,27
 1-03-21,Cincinnati,Baltimore,3,38
 1-03-21,Buffalo,Miami,56,26
-1-03-21,Kansas City,LA Chargers,21,38
-1-03-21,San Francisco,Seattle,23,26
-1-03-21,Denver,Las Vegas,31,32
-1-03-21,LA Rams,Arizona,18,7
+1-03-21,KansasCity,LAChargers,21,38
+1-03-21,SanFrancisco,Seattle,23,26
+1-03-21,Denver,LasVegas,31,32
+1-03-21,LARams,Arizona,18,7
 1-09-21,Buffalo,Indianapolis,27,24
-1-09-21,Seattle,LA Rams,20,30
-1-09-21,Washington,Tampa Bay,23,31
+1-09-21,Seattle,LARams,20,30
+1-09-21,Washington,TampaBay,23,31
 1-10-21,Tennessee,Baltimore,13,20
-1-10-21,New Orleans,Chicago,21,9
+1-10-21,NewOrleans,Chicago,21,9
 1-10-21,Pittsburgh,Cleveland,37,48
-1-16-21,Green Bay,LA Rams,32,18
+1-16-21,GreenBay,LARams,32,18
 1-16-21,Buffalo,Baltimore,17,3
-1-17-21,Kansas City,Cleveland,22,17
-1-17-21,New Orleans,Tampa Bay,20,30
-1-24-21,Green Bay,Tampa Bay,26,31
+1-17-21,KansasCity,Cleveland,22,17
+1-17-21,NewOrleans,TampaBay,20,30
+1-24-21,GreenBay,TampaBay,26,31

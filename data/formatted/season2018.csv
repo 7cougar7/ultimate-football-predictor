@@ -1,5 +1,4 @@
 date,home team,visiting team,home score,visiting score
-,,,,
 9-06-18,Philadelphia,Atlanta,18,12
 9-09-18,Cleveland,Pittsburgh,21,21
 9-09-18,Minnesota,SanFrancisco,24,16
@@ -15,7 +14,7 @@ date,home team,visiting team,home score,visiting score
 9-09-18,Arizona,Washington,6,24
 9-09-18,GreenBay,Chicago,24,23
 9-10-18,Detroit,NYJets,17,48
-9-10-18,Oakland,LARams,13,33
+9-10-18,LasVegas,LARams,13,33
 9-13-18,Cincinnati,Baltimore,34,23
 9-16-18,Washington,Indianapolis,9,21
 9-16-18,Atlanta,Carolina,31,24
@@ -29,7 +28,7 @@ date,home team,visiting team,home score,visiting score
 9-16-18,LARams,Arizona,34,0
 9-16-18,SanFrancisco,Detroit,30,27
 9-16-18,Jacksonville,NewEngland,31,20
-9-16-18,Denver,Oakland,20,19
+9-16-18,Denver,LasVegas,20,19
 9-16-18,Dallas,NYGiants,20,13
 9-17-18,Chicago,Seattle,24,17
 9-20-18,Cleveland,NYJets,21,17
@@ -39,7 +38,7 @@ date,home team,visiting team,home score,visiting score
 9-23-18,Atlanta,NewOrleans,37,43
 9-23-18,Baltimore,Denver,27,14
 9-23-18,Houston,NYGiants,22,27
-9-23-18,Miami,Oakland,28,20
+9-23-18,Miami,LasVegas,28,20
 9-23-18,Washington,GreenBay,31,17
 9-23-18,Minnesota,Buffalo,6,27
 9-23-18,KansasCity,SanFrancisco,38,27
@@ -58,7 +57,7 @@ date,home team,visiting team,home score,visiting score
 9-30-18,Chicago,TampaBay,48,10
 9-30-18,Tennessee,Philadelphia,26,23
 9-30-18,Arizona,Seattle,17,20
-9-30-18,Oakland,Cleveland,45,42
+9-30-18,LasVegas,Cleveland,45,42
 9-30-18,LAChargers,SanFrancisco,29,27
 9-30-18,NYGiants,NewOrleans,18,33
 9-30-18,Pittsburgh,Baltimore,14,26
@@ -72,7 +71,7 @@ date,home team,visiting team,home score,visiting score
 10-07-18,Pittsburgh,Atlanta,41,17
 10-07-18,Detroit,GreenBay,31,23
 10-07-18,Cincinnati,Miami,27,17
-10-07-18,LAChargers,Oakland,26,10
+10-07-18,LAChargers,LasVegas,26,10
 10-07-18,SanFrancisco,Arizona,18,28
 10-07-18,Philadelphia,Minnesota,21,23
 10-07-18,Seattle,LARams,31,33
@@ -86,7 +85,7 @@ date,home team,visiting team,home score,visiting score
 10-14-18,NYJets,Indianapolis,42,34
 10-14-18,Cincinnati,Pittsburgh,21,28
 10-14-18,Atlanta,TampaBay,34,29
-10-14-18,Oakland,Seattle,3,27
+10-14-18,LasVegas,Seattle,3,27
 10-14-18,Houston,Buffalo,20,13
 10-14-18,Denver,LARams,20,23
 10-14-18,Dallas,Jacksonville,40,7
@@ -116,12 +115,12 @@ date,home team,visiting team,home score,visiting score
 10-28-18,Detroit,Seattle,14,28
 10-28-18,Cincinnati,TampaBay,37,34
 10-28-18,Carolina,Baltimore,36,21
-10-28-18,Oakland,Indianapolis,28,42
+10-28-18,LasVegas,Indianapolis,28,42
 10-28-18,Arizona,SanFrancisco,18,15
 10-28-18,LARams,GreenBay,29,27
 10-28-18,Minnesota,NewOrleans,20,30
 10-29-18,Buffalo,NewEngland,6,25
-11-01-18,SanFrancisco,Oakland,34,3
+11-01-18,SanFrancisco,LasVegas,34,3
 11-04-18,Minnesota,Detroit,24,9
 11-04-18,Cleveland,KansasCity,21,37
 11-04-18,Baltimore,Pittsburgh,16,23
@@ -144,7 +143,7 @@ date,home team,visiting team,home score,visiting score
 11-11-18,Indianapolis,Jacksonville,29,26
 11-11-18,Chicago,Detroit,34,22
 11-11-18,KansasCity,Arizona,26,14
-11-11-18,Oakland,LAChargers,6,20
+11-11-18,LasVegas,LAChargers,6,20
 11-11-18,LARams,Seattle,36,31
 11-11-18,Philadelphia,Dallas,20,27
 11-12-18,SanFrancisco,NYGiants,23,27
@@ -158,14 +157,14 @@ date,home team,visiting team,home score,visiting score
 11-18-18,Washington,Houston,21,23
 11-18-18,NYGiants,TampaBay,38,35
 11-18-18,LAChargers,Denver,22,23
-11-18-18,Arizona,Oakland,21,23
+11-18-18,Arizona,LasVegas,21,23
 11-18-18,Jacksonville,Pittsburgh,16,20
 11-19-18,LARams,KansasCity,54,51
 11-22-18,Detroit,Chicago,16,23
 11-22-18,Dallas,Washington,31,23
 11-22-18,NewOrleans,Atlanta,31,17
 11-25-18,Buffalo,Jacksonville,24,21
-11-25-18,Baltimore,Oakland,34,17
+11-25-18,Baltimore,LasVegas,34,17
 11-25-18,TampaBay,SanFrancisco,27,9
 11-25-18,Philadelphia,NYGiants,25,22
 11-25-18,Cincinnati,Cleveland,20,35
@@ -187,7 +186,7 @@ date,home team,visiting team,home score,visiting score
 12-02-18,Cincinnati,Denver,10,24
 12-02-18,Detroit,LARams,16,30
 12-02-18,GreenBay,Arizona,17,20
-12-02-18,Oakland,KansasCity,33,40
+12-02-18,LasVegas,KansasCity,33,40
 12-02-18,Tennessee,NYJets,26,22
 12-02-18,NewEngland,Minnesota,24,10
 12-02-18,Seattle,SanFrancisco,43,16
@@ -206,13 +205,13 @@ date,home team,visiting team,home score,visiting score
 12-09-18,LAChargers,Cincinnati,26,21
 12-09-18,Arizona,Detroit,3,17
 12-09-18,Dallas,Philadelphia,29,23
-12-09-18,Oakland,Pittsburgh,24,21
+12-09-18,LasVegas,Pittsburgh,24,21
 12-10-18,Seattle,Minnesota,21,7
 12-13-18,KansasCity,LAChargers,28,29
 12-15-18,NYJets,Houston,22,29
 12-15-18,Denver,Cleveland,16,17
 12-16-18,Minnesota,Miami,41,17
-12-16-18,Cincinnati,Oakland,30,16
+12-16-18,Cincinnati,LasVegas,30,16
 12-16-18,Baltimore,TampaBay,20,12
 12-16-18,Indianapolis,Dallas,23,0
 12-16-18,Buffalo,Detroit,14,13
@@ -239,9 +238,9 @@ date,home team,visiting team,home score,visiting score
 12-23-18,SanFrancisco,Chicago,9,14
 12-23-18,NewOrleans,Pittsburgh,31,28
 12-23-18,Seattle,KansasCity,38,31
-12-24-18,Oakland,Denver,27,14
+12-24-18,LasVegas,Denver,27,14
 12-30-18,NYGiants,Dallas,35,36
-12-30-18,KansasCity,Oakland,35,3
+12-30-18,KansasCity,LasVegas,35,3
 12-30-18,NewOrleans,Carolina,14,33
 12-30-18,NewEngland,NYJets,38,3
 12-30-18,Washington,Philadelphia,0,24

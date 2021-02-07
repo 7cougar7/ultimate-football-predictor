@@ -27,16 +27,23 @@ def main():
 
             df = pd.DataFrame(data=[[row['home score'], row['visiting score'], row['Win Binary']]], dtype='float',
                               columns=['home score', 'visiting score', 'Win Binary'])
-            df.drop(df.tail(0).index, inplace=True)
+            df = df.reset_index()
+            df = df.drop(['index'], axis=1)
             df['Year'] = int('20'+year)
+            print(df)
+
+            total_stats = total_stats.reset_index()
+            total_stats = total_stats.drop(['index'], axis=1)
             total_stats = total_stats.join([df])
+            total_stats['Win Binary'] = total_stats['Win Binary'].fillna('*')
             if new_df is None:
                 new_df = total_stats
             else:
                 new_df = pd.concat([new_df, total_stats])
         all_inputs = pd.concat([all_inputs, new_df])
-        new_df.to_csv('finalized_db20' + year + '.csv')
+        new_df.to_csv('data/results/finalized_db20' + year + '.csv')
     all_inputs.to_csv('all_inputs.csv')
+    print('Done')
 
 
 if __name__ == '__main__':
