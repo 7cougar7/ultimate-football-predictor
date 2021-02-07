@@ -25,11 +25,23 @@
         }
     </style>
     <script>
-        function changeTeamLogo(image, team) {
+        function changeTeamLogo(image, team_name, year) {
             let d = new Date();
-            let imagePath = '/static/team_logos/' + team + '.png?timestamp=' + d.getTime()
+            let imagePath = '/static/team_logos/' + team_name + '.png?timestamp=' + d.getTime()
             image.attr('src', imagePath)
+            $.ajax({
+                type: "POST",
+                url: "/get_team_info/",
+                data: {
+                    year: year,
+                    name: team_name
+                },
+                success: function (response) {
+                    console.log(response.team);
+                }
+            });
         }
+
 
         $(document).ready(function () {
             tf.setBackend('cpu')
@@ -38,10 +50,17 @@
             const model = tf.loadLayersModel("{{url_for('static', filename='js/model_v1/model.json')}}")
             console.log('model', model)
             $('#home-team-select').change(function () {
-                changeTeamLogo($('#home-logo'), $(this).children("option:selected").val())
+                changeTeamLogo(
+                    $('#home-logo'),
+                    $(this).children("option:selected").val(),
+                    $('#home-year-select option:selected').val()
+                )
             })
-            $('#visiting-select').change(function () {
-                changeTeamLogo($('#visiting-logo'), $(this).children("option:selected").val())
+            $('#visiting-team-select').change(function () {
+                changeTeamLogo($('#visiting-logo'),
+                    $(this).children("option:selected").val(),
+                    $('#visiting-year-select option:selected').val()
+                )
             })
         })
     </script>
@@ -53,13 +72,13 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-3">
-            <img id="home-logo" src="/static/team_logos/Arizona.png" class="float-left"
-                  alt="Home Team Logo">
+                <img id="home-logo" src="/static/team_logos/Arizona.png" class="float-left"
+                     alt="Home Team Logo">
             </div>
             <div class="col-lg-3"></div>
             <div class="col-lg-3">
-            <img id="visiting-logo" src="/static/team_logos/Arizona.png" class="float-right"
-                  alt="Visiting Team Logo">
+                <img id="visiting-logo" src="/static/team_logos/Arizona.png" class="float-right"
+                     alt="Visiting Team Logo">
             </div>
         </div>
         <div class="row">

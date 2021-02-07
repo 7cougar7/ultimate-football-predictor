@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import numpy as np
 import tensorflow as tf
@@ -138,7 +140,7 @@ def main():
     # years = ['20']
     for year in years:
         required_cols_off = [1, 7, 12, 18]
-        df = pd.read_csv('OffensiveRating20' + year + '.csv', usecols=required_cols_off)
+        df = pd.read_csv('data/results/OffensiveRating20' + year + '.csv', usecols=required_cols_off)
         df = df[1:]
         df.columns = ['Team', 'Off Turnovers', 'Passing Yards', 'Rushing Yards']
         df = df.astype({'Off Turnovers': 'int32', 'Passing Yards': 'int32', 'Rushing Yards': 'int32'})
@@ -151,7 +153,7 @@ def main():
         # df = names.join([df])
 
         required_cols_def = [1, 7, 12, 18]
-        df_def = pd.read_csv('DefensiveRating20' + year + '.csv', usecols=required_cols_def)
+        df_def = pd.read_csv('data/results/DefensiveRating20' + year + '.csv', usecols=required_cols_def)
         df_def = df_def[1:]
         df_def.columns = ['Team', 'Def Turnovers', 'Passing Yards All', 'Rushing Yards All']
         df_def = df_def.astype({'Def Turnovers': 'int32', 'Passing Yards All': 'int32', 'Rushing Yards All': 'int32'})
@@ -167,7 +169,7 @@ def main():
         df_total = df.join([df_def])
 
         required_cols_off = [1, 2]
-        df_qbr = pd.read_csv('QBR20' + year + '.csv', usecols=required_cols_off)
+        df_qbr = pd.read_csv('data/results/QBR20' + year + '.csv', usecols=required_cols_off)
         # df = df[1:]
         df_qbr.columns = ['Tm', 'QBR']
         df_qbr = df_qbr.astype({'QBR': 'float'})
@@ -179,7 +181,8 @@ def main():
         df_total = df_total.join([df_qbr])
 
         # The GOAT CODE
-        df_total.to_csv('data/results/20' + year + ' Inputs.csv')
+        output_path = 'static/input_data/20' + year + 'Inputs.csv'
+        df_total.to_csv(output_path)
     print('Done')
 
         # pd.set_option("display.max_rows", None, "display.max_columns", None)
