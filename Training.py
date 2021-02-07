@@ -9,7 +9,7 @@ def main():
     print("TensorFlow Version: {}".format(tf.__version__))
     print("Eager execution: {}".format(tf.executing_eagerly()))
 
-    df = pd.read_csv('finalized_db.csv')
+    df = pd.read_csv('data/finalized_dbs/finalized_db.csv')
     # target = df[['home_score', 'visiting_score', 'win_binary']]
     target = df[['win_binary']]
     df = df.drop([df.columns[0], 'home_score', 'visiting_score', 'win_binary'], axis=1)
