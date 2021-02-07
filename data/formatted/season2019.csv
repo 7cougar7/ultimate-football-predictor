@@ -79,7 +79,7 @@ date,home team,visiting team,home score,visiting score
 10-06-2019,KansasCity,Indianapolis,13,19
 10-07-2019,SanFrancisco,Cleveland,31,3
 10-10-2019,NewEngland,NYGiants,35,14
-10-13-2019,,TampaBay,,26
+10-13-2019,TampaBay,Carolina,37,26
 10-13-2019,Baltimore,Cincinnati,23,17
 10-13-2019,Cleveland,Seattle,28,32
 10-13-2019,KansasCity,Houston,24,31
@@ -122,7 +122,7 @@ date,home team,visiting team,home score,visiting score
 10-27-2019,KansasCity,GreenBay,24,31
 10-28-2019,Pittsburgh,Miami,27,14
 10-31-2019,Arizona,SanFrancisco,25,28
-11-03-2019,,Jacksonville,,3
+11-03-2019,Houston,Jacksonville,26,3
 11-03-2019,Buffalo,Washington,24,9
 11-03-2019,Carolina,Tennessee,30,20
 11-03-2019,Philadelphia,Chicago,22,14
