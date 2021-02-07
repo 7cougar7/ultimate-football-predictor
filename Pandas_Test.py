@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    years = ['18', '17', '16', '15', '14', '13']
+    years = ['20', '19', '18', '17', '16', '15', '14', '13']
     for year in years:
         required_cols_off = [1, 7, 12, 18]
         df = pd.read_csv('OffensiveRating20' + year + '.csv', usecols=required_cols_off)
@@ -31,7 +31,7 @@ def main():
 
         required_cols_off = [2]
         df = pd.read_csv('QBR20' + year + '.csv', usecols=required_cols_off)
-        df = df[1:]
+        #df = df[1:]
         df.columns = ['QBR']
         df = df.astype({'QBR': 'float'})
         df_total = df_total.join([df])
@@ -43,7 +43,6 @@ def main():
         # print(df_total)
         # with pd.option_context('display.max_seq_items', None):
         #    print(df.columns)
-
 
     # required_cols_off = [1, 7, 12, 18]
     # df = pd.read_csv('OffensiveRatings2020.csv', usecols=required_cols_off)
@@ -97,4 +96,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    #main()
+    pass

@@ -2,7 +2,8 @@ import pandas as pd
 
 
 def main():
-    years = ['18', '17', '16', '15', '14', '13']
+    years = ['20', '19', '18', '17', '16', '15', '14', '13']
+    # years = ['13']
     for year in years:
         df = pd.read_csv('data/formatted/season20' + year + '.csv')
         df = df[1:]
