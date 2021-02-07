@@ -32,6 +32,8 @@ def main():
     x_train = normalized_dataset.values
     y_train = target.values
 
+    pd.set_option("display.max_rows", None, "display.max_columns", None)
+
     model = create_model()
     EPOCHS = 1000
 
@@ -50,8 +52,8 @@ def main():
 
     model.fit(x=training.values, y=training_output.values, epochs=EPOCHS,
               validation_data=(validation_dataset.values, validation_output.values),
-              use_multiprocessing=True)  # , callbacks=[cp_callback])
-
+              use_multiprocessing=True, verbose=0)  # , callbacks=[cp_callback])
+    print(validation_output)
     print(model(validation_dataset.values))
 
     # model.save('models/Model_v' + str(model_version))
@@ -59,12 +61,11 @@ def main():
 
 def create_model():
     model = tf.keras.Sequential([
-        tf.keras.layers.Dense(14, activation=tf.nn.tanh, input_shape=(14,)),
-        tf.keras.layers.Dense(10, activation=tf.nn.softmax),
-        tf.keras.layers.PReLU(),
-        tf.keras.layers.Dense(10, activation=tf.nn.tanh),
-        tf.keras.layers.Dense(10, activation=tf.nn.tanh),
-        tf.keras.layers.Dense(10, activation=tf.nn.tanh),
+        tf.keras.layers.InputLayer(input_shape=(14,)),
+        tf.keras.layers.Dense(6, activation=tf.nn.tanh),
+        tf.keras.layers.Dense(6, activation=tf.nn.tanh),
+        # tf.keras.layers.Dense(6, activation=tf.nn.tanh),
+        # tf.keras.layers.Dense(6, activation=tf.nn.tanh),
         # tf.keras.layers.Dense(10, activation=tf.nn.tanh),
         tf.keras.layers.Dense(3)
     ])

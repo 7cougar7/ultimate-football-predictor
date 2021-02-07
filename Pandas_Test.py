@@ -90,7 +90,7 @@ def main():
     # # The GOAT CODE
     # df_total.to_csv('2020 Inputs.csv')
     #
-    # pd.set_option("display.max_rows", None, "display.max_columns", None)
+    pd.set_option("display.max_rows", None, "display.max_columns", None)
     # print(df_total)
     # # with pd.option_context('display.max_seq_items', None):
     # #    print(df.columns)
