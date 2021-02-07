@@ -21,12 +21,13 @@ def get_team_info():
     if name and year:
         df = pd.read_csv('static/input_data/' + year + 'Inputs.csv')
         df.drop(['Unnamed: 0'], axis=1, inplace=True)
-        row = df.loc[df['Team'] == name]
-        row.drop(['Team'], axis=1, inplace=True)
+        names = df[['Team']]
+        df.drop(['Team'], axis=1, inplace=True)
+        df = (df - df.min()) / (df.max() - df.min())
+        row = df.loc[names['Team'] == name]
+        # row.drop(['Team'], axis=1, inplace=True)
         row = row.to_numpy().tolist()[0]
-        row.append(int(year))
-        print('test')
-        print(row)
+        row.append((int(year) - 2013) / 7)
         return jsonify({'team': row})
     else:
         return jsonify({})

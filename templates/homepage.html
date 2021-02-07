@@ -25,42 +25,91 @@
         }
     </style>
     <script>
-        function changeTeamLogo(image, team_name, year) {
+        let homeData = [];
+        let visitingData = [];
+
+        function changeTeamLogo(image, team_name, year, side) {
             let d = new Date();
             let imagePath = '/static/team_logos/' + team_name + '.png?timestamp=' + d.getTime()
             image.attr('src', imagePath)
             $.ajax({
                 type: "POST",
                 url: "/get_team_info/",
+                async: false,
                 data: {
                     year: year,
                     name: team_name
                 },
                 success: function (response) {
-                    console.log(response.team);
+                    if (side === 'home') {
+                        homeData = response.team
+                    } else {
+                        visitingData = response.team
+                    }
                 }
             });
         }
 
+        async function make_prediction(final) {
+            const loadedModel = await tf.loadLayersModel('/static/js/model_v2/model.json');
+            let inputs = tf.tensor(final)
+            inputs = inputs.reshape([1, 16])
+            let results = loadedModel.predict(inputs);
+            results = results.arraySync()[0]
+            console.log(results)
+            $('#home-score').text(Math.round(results[0]))
+            $('#visiting-score').text(Math.round(results[1]))
+            $('#confidence-value').text(Math.round(Math.abs(results[2] - 0.5) * 2000) / 10)
+        }
+
 
         $(document).ready(function () {
-            tf.setBackend('cpu')
-            console.log(tf.getBackend())
-            console.log("{{url_for('static', filename='js/model.json')}}")
-            const model = tf.loadLayersModel("{{url_for('static', filename='js/model_v1/model.json')}}")
-            console.log('model', model)
+            changeTeamLogo(
+                $('#home-logo'),
+                $('#home-team-select option:selected').val(),
+                $('#home-year-select option:selected').val(),
+                'home'
+            )
+            changeTeamLogo(
+                $('#visiting-logo'),
+                $('#visiting-team-select option:selected').val(),
+                $('#visiting-year-select option:selected').val(),
+                'visiting'
+            )
             $('#home-team-select').change(function () {
                 changeTeamLogo(
                     $('#home-logo'),
                     $(this).children("option:selected").val(),
-                    $('#home-year-select option:selected').val()
+                    $('#home-year-select option:selected').val(),
+                    'home'
+                )
+            })
+            $('#home-year-select').change(function () {
+                changeTeamLogo(
+                    $('#home-logo'),
+                    $('#home-team-select option:selected').val(),
+                    $(this).children("option:selected").val(),
+                    'home'
                 )
             })
             $('#visiting-team-select').change(function () {
                 changeTeamLogo($('#visiting-logo'),
                     $(this).children("option:selected").val(),
-                    $('#visiting-year-select option:selected').val()
+                    $('#visiting-year-select option:selected').val(),
+                    'visiting'
                 )
+            })
+            $('#visiting-year-select').change(function () {
+                changeTeamLogo($('#visiting-logo'),
+                    $('#visiting-team-select option:selected').val(),
+                    $(this).children("option:selected").val(),
+                    'visiting'
+                )
+            })
+            $('#submit-button').click(function () {
+                let final = homeData
+                final = final.concat(visitingData)
+                make_prediction(final)
             })
         })
     </script>
@@ -182,7 +231,30 @@
             </div>
         </div>
         <div class="row">
-            <button type="button" class="btn btn-primary">Submit</button>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4">
+                <h3 class="text-white">Home Score: </h3><span class="text-white h3" id="home-score"></span>
+
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4">
+                <h3 class="text-white">Visiting Score: </h3><span class="text-white h3" id="visiting-score"></span>
+
+            </div>
+            <div class="col-lg-1"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h3 class="text-white">Confidence: </h3><span class="text-white h3"
+                                                              id="confidence-value"></span><span
+                    class="text-white h3">%</span>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary" id="submit-button">Submit</button>
         </div>
         <!--        </div>-->
     </div>
